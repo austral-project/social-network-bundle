@@ -10,6 +10,7 @@
  
 namespace Austral\SocialNetworkBundle\Admin;
 
+use Austral\GraphicItemsBundle\Field\GraphicItemField;
 use Austral\SocialNetworkBundle\Entity\Interfaces\SocialNetworkInterface;
 
 use Austral\AdminBundle\Admin\Admin;
@@ -61,7 +62,8 @@ class SocialNetworkAdmin extends Admin implements AdminModuleInterface
       ->addFieldset("fieldset.generalInformation")
         ->add(Field\TextField::create("name"))
         ->add(Field\TextField::create("keyname"))
-        ->add(Field\TextField::create("url"))
+        //->add(Field\TextField::create("url"))
+        ->add(GraphicItemField::create("url"))
       ->end();
   }
 
