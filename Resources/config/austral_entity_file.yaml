@@ -1,0 +1,19 @@
+parameters:
+
+  austral_entity_file.cropper.social_network_bundle:
+    social_network_picto:
+      name:   Social Picto
+      ratio:  1 / 1
+      picto:  "austral-picto-maximize"
+
+  austral_entity_file.uploads.social_network_bundle:
+    social_network_picto:
+      size:
+        max: "2M"
+      mimeTypes:
+        - 'image/jpg'
+        - 'image/jpeg'
+        - 'image/png'
+        - 'image/gif'
+        - 'image/svg'
+        - 'image/svg+xml'

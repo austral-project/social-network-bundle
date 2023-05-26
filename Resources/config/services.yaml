@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire:      true
+    autoconfigure: true
+    public:        true
+
+##### Entities Manager #####
+
+  ##### Config Entity Manager
+  austral.entity_manager.social_network:
+    class:          Austral\SocialNetworkBundle\EntityManager\SocialNetworkEntityManager
+    arguments:      [ "@doctrine.orm.entity_manager",  "@event_dispatcher", "%austral.entity.social_network.class%" ]

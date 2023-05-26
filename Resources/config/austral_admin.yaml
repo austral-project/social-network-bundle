@@ -1,0 +1,33 @@
+services:
+  _defaults:
+    autowire:      true
+    autoconfigure: true
+    public:        true
+
+parameters:
+
+  austral.admin.class.social_network.class:                                           Austral\SocialNetworkBundle\Admin\SocialNetworkAdmin
+
+  austral.admin.modules.social_network_bundle.config.enabled:                         true
+  austral.admin.modules.social_network_bundle.config.social_network.enabled:          true
+
+  austral_admin.modules.social_network_bundle:
+    config_social:
+      enabled:                    "%austral.admin.modules.social_network_bundle.config.enabled%"
+      navigation:
+        position:                 500
+      name:                       "Configuration"
+      picto:                      "austral-picto-cog"
+      route:                      "config"
+      translate:                  "female_c"
+      actions:
+        index:                    "listChildrenModules"
+      children:
+        social_network:
+          enabled:                "%austral.admin.modules.social_network_bundle.config.social_network.enabled%"
+          name:                   "Social Network"
+          picto:                  "austral-picto-activity"
+          pictoTile:              "parameters"
+          route:                  "social-network"
+          class:                  "%austral.admin.class.social_network.class%"
+          translate:              "male_c"

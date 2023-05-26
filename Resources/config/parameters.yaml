@@ -1,0 +1,10 @@
+parameters:
+
+##### Entities Class
+  austral.entity.social_network.class:                                              App\Entity\Austral\SocialNetworkBundle\SocialNetwork
+  austral.entity.social_network_translate.class:                                    App\Entity\Austral\SocialNetworkBundle\SocialNetworkTranslate
+
+##### Doctrine Resolve target Entities
+  austral.resolve_target_entities.social_network:
+    Austral\SocialNetworkBundle\Entity\Interfaces\SocialNetworkInterface:                "%austral.entity.social_network.class%"
+    Austral\SocialNetworkBundle\Entity\Interfaces\SocialNetworkTranslateInterface:       "%austral.entity.social_network_translate.class%"

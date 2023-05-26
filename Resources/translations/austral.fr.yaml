@@ -1,0 +1,13 @@
+pages:
+  names:
+    configSocialNetwork:
+      singular:                                 Réseaux sociaux
+      plural:                                   Réseau social
+
+fields:
+  name:
+    entitled:                                   Nom
+  keyname:
+    entitled:                                   Keyname
+  url:
+    entitled:                                   Url

@@ -1,14 +1,16 @@
 <?php
 /*
- * This file is part of the Austral SocialNetwork Bundle package.
+ * This file is part of the App package.
  *
- * (c) Austral <support@austral.dev>
+ * (c) Yipikai <support@yipikai.studio>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
 namespace Austral\SocialNetworkBundle;
+use Austral\SocialNetworkBundle\DependencyInjection\Compiler\DoctrineResolveTargetEntityPass;
+use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -25,6 +27,7 @@ class AustralSocialNetworkBundle extends Bundle
   public function build(ContainerBuilder $container)
   {
     parent::build($container);
+    $container->addCompilerPass(new DoctrineResolveTargetEntityPass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1000);
   }
 
 }
