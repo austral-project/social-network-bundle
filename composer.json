@@ -1,5 +1,5 @@
 {
-  "name":                                     "austral/social-newtork-bundle",
+  "name":                                     "austral/social-network-bundle",
   "type":                                     "symfony-bundle",
   "description":                              "Social newtork for Austral",
   "keywords":                                 ["Austral", "Social Network", "Symfony"],
