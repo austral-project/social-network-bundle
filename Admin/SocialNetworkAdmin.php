@@ -57,9 +57,6 @@ class SocialNetworkAdmin extends Admin implements AdminModuleInterface
    */
   public function configureFormMapper(FormAdminEvent $formAdminEvent)
   {
-
-    $this->container->get('austral.social_network.simple_icon');
-
     $formAdminEvent->getFormMapper()
       ->addFieldset("fieldset.generalInformation")
         ->add(Field\TextField::create("name"))
