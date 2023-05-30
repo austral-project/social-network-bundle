@@ -1,8 +1,8 @@
 pages:
   names:
     configSocialNetwork:
-      singular:                                 Réseaux sociaux
-      plural:                                   Réseau social
+      singular:                                 Réseau social
+      plural:                                   Réseaux sociaux
 
 fields:
   name:
