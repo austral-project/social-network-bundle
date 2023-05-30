@@ -10,7 +10,9 @@
  
 namespace Austral\SocialNetworkBundle\Admin;
 
+use Austral\GraphicItemsBundle\Column\GraphicItem;
 use Austral\GraphicItemsBundle\Field\GraphicItemField;
+use Austral\ListBundle\DataHydrate\DataHydrateORM;
 use Austral\SocialNetworkBundle\Entity\Interfaces\SocialNetworkInterface;
 
 use Austral\AdminBundle\Admin\Admin;
@@ -22,6 +24,7 @@ use Austral\EntityBundle\Entity\EntityInterface;
 use Austral\FormBundle\Field as Field;
 use Austral\ListBundle\Column as Column;
 
+use Doctrine\ORM\QueryBuilder;
 use Exception;
 
 /**
@@ -47,6 +50,13 @@ class SocialNetworkAdmin extends Admin implements AdminModuleInterface
   public function configureListMapper(ListAdminEvent $listAdminEvent)
   {
     $listAdminEvent->getListMapper()
+      ->buildDataHydrate(function(DataHydrateORM $dataHydrate) {
+        $dataHydrate->addQueryBuilderPaginatorClosure(function(QueryBuilder $queryBuilder) {
+          return $queryBuilder
+            ->orderBy("root.position", "ASC");
+        });
+      })
+      ->addColumn(new GraphicItem("graphicItemIcon"))
       ->addColumn(new Column\Value("name"))
       ->addColumn(new Column\Date("updated", "d/m/Y"));
   }

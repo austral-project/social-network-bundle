@@ -26,6 +26,7 @@ use Austral\EntityBundle\Entity\Interfaces\FileInterface;
 use Austral\EntityFileBundle\Entity\Traits\EntityFileTrait;
 use Austral\EntityFileBundle\Annotation as AustralFile;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
 
@@ -104,6 +105,13 @@ abstract class SocialNetwork extends Entity implements SocialNetworkInterface, E
    * @ORM\Column(name="picto_alt", type="string", length=255, nullable=true)
    */
   protected ?string $pictoAlt = null;
+
+  /**
+   * @var int|null
+   * @Gedmo\SortablePosition
+   * @ORM\Column(name="position", type="integer", nullable=false )
+   */
+  protected ?int $position;
   
   /**
    * SocialNetwork constructor
@@ -254,6 +262,25 @@ abstract class SocialNetwork extends Entity implements SocialNetworkInterface, E
   public function setPictoAlt(?string $pictoAlt): SocialNetworkInterface
   {
     $this->pictoAlt = $pictoAlt;
+    return $this;
+  }
+
+  /**
+   * @return int|null
+   */
+  public function getPosition(): ?int
+  {
+    return $this->position;
+  }
+
+  /**
+   * @param int|null $position
+   *
+   * @return $this
+   */
+  public function setPosition(?int $position): SocialNetwork
+  {
+    $this->position = $position;
     return $this;
   }
 

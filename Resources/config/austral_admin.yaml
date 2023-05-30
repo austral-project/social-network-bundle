@@ -31,3 +31,4 @@ parameters:
           route:                  "social-network"
           class:                  "%austral.admin.class.social_network.class%"
           translate:              "male_c"
+          sortable:               true
