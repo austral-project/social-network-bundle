@@ -78,9 +78,9 @@ abstract class SocialNetwork extends Entity implements SocialNetworkInterface, E
 
   /**
    * @var string|null
-   * @ORM\Column(name="simple_icon", type="string", length=255, nullable=true )
+   * @ORM\Column(name="graphic_item_icon", type="string", length=255, nullable=true )
    */
-  protected ?string $simpleIcon = null;
+  protected ?string $graphicItemIcon = null;
 
   /**
    * @var string|null
@@ -185,19 +185,18 @@ abstract class SocialNetwork extends Entity implements SocialNetworkInterface, E
   /**
    * @return string|null
    */
-  public function getSimpleIcon(): ?string
+  public function getGraphicItemIcon(): ?string
   {
-    return $this->simpleIcon;
+    return $this->graphicItemIcon;
   }
 
   /**
-   * @param string|null $simpleIcon
-   *
-   * @return SocialNetworkInterface
+   * @param string|null $graphicItemIcon
+   * @return SocialNetwork
    */
-  public function setSimpleIcon(?string $simpleIcon): SocialNetworkInterface
+  public function setGraphicItemIcon(?string $graphicItemIcon): SocialNetwork
   {
-    $this->simpleIcon = $simpleIcon;
+    $this->graphicItemIcon = $graphicItemIcon;
     return $this;
   }
 

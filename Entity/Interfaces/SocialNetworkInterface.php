@@ -10,6 +10,8 @@
 
 namespace Austral\SocialNetworkBundle\Entity\Interfaces;
 
+use Austral\SocialNetworkBundle\Entity\SocialNetwork;
+
 /**
  * Austral SocialNetwork Interface.
  * @author Matthieu Beurel <matthieu@austral.dev>
@@ -56,14 +58,13 @@ interface SocialNetworkInterface
   /**
    * @return string|null
    */
-  public function getSimpleIcon(): ?string;
+  public function getGraphicItemIcon(): ?string;
 
   /**
-   * @param string|null $simpleIcon
-   *
+   * @param string|null $graphicItemIcon
    * @return SocialNetworkInterface
    */
-  public function setSimpleIcon(?string $simpleIcon): SocialNetworkInterface;
+  public function setGraphicItemIcon(?string $graphicItemIcon): SocialNetworkInterface;
 
   /**
    * @return string|null

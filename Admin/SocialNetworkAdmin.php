@@ -62,9 +62,29 @@ class SocialNetworkAdmin extends Admin implements AdminModuleInterface
       ->addFieldset("fieldset.generalInformation")
         ->add(Field\TextField::create("name"))
         ->add(Field\TextField::create("keyname"))
-        //->add(Field\TextField::create("url"))
-        ->add(GraphicItemField::create("url"))
+        ->add(Field\TextField::create("url"))
+        ->addGroup("icon")
+          ->add(Field\UploadField::create("picto"))
+          ->add(GraphicItemField::create("graphicItemIcon"))
+        ->end()
       ->end();
+
+
+    $formAdminEvent->getFormMapper()->addPopin("popup-editor-picto", "picto", array(
+        "button"  =>  array(
+          "entitled"            =>  "actions.picture.edit",
+          "picto"               =>  "",
+          "class"               =>  "button-action"
+        ),
+        "popin"  =>  array(
+          "id"            =>  "upload",
+          "template"      =>  "uploadEditor",
+        )
+      )
+    )
+      ->add(Field\TextField::create("pictoAlt", array('entitled'=>"fields.alt.entitled")))
+      ->add(Field\TextField::create("pictoReelname", array('entitled'=>"fields.reelname.entitled")))
+    ->end();
   }
 
   /**

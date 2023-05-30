@@ -11,3 +11,5 @@ fields:
     entitled:                                   Keyname
   url:
     entitled:                                   Url
+  graphicItemIcon:
+    entitled:                                   Picto librairy
