@@ -3,6 +3,12 @@ pages:
     configSocialNetwork:
       singular:                                 Réseau social
       plural:                                   Réseaux sociaux
+    configSocialNetworkByDomain:
+      singular:                                 "Réseau social : %domainName%"
+      plural:                                   "Réseaux sociaux : %domainName%"
+    configSocialNetworkForAllDomain:
+      singular:                                 "Réseau social pour tous les domaines"
+      plural:                                   "Réseaux sociaux pour tous les domaines"
 
 fields:
   name:
