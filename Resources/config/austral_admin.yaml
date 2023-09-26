@@ -27,7 +27,7 @@ parameters:
           enabled:                "%austral.admin.modules.social_network_bundle.config.social_network.enabled%"
           name:                   "Social Network"
           picto:                  "austral-picto-activity"
-          pictoTile:              "parameters"
+          pictoTile:              "network"
           route:                  "social-network"
           class:                  "%austral.admin.class.social_network.class%"
           translate:              "male_c"
