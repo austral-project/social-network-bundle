@@ -13,6 +13,7 @@ namespace Austral\SocialNetworkBundle\Repository;
 use Austral\SocialNetworkBundle\Entity\Interfaces\SocialNetworkInterface;
 use Austral\EntityBundle\Repository\EntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * App SocialNetwork Repository.
@@ -32,6 +33,22 @@ class SocialNetworkRepository extends EntityRepository
   public function retreiveByKeyname(string $keyname, \Closure $closure = null): ?SocialNetworkInterface
   {
     return $this->retreiveByKey("keyname", $keyname, $closure);
+  }
+
+
+
+  /**
+   * @param $name
+   * @param QueryBuilder $queryBuilder
+   *
+   * @return QueryBuilder
+   */
+  public function queryBuilderExtends($name, QueryBuilder $queryBuilder): QueryBuilder
+  {
+    if (strpos($name, "count") === false) {
+      $queryBuilder->leftJoin('root.translates', 'translates')->addSelect('translates');
+    }
+    return $queryBuilder;
   }
 
 }
