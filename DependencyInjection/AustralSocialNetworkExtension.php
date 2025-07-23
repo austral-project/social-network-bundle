@@ -28,7 +28,7 @@ class AustralSocialNetworkExtension extends Extension
    * {@inheritdoc}
    * @throws Exception
    */
-  public function load(array $configs, ContainerBuilder $container)
+  public function load(array $configs, ContainerBuilder $container): void
   {
     $configuration = new Configuration();
     $config = $this->processConfiguration($configuration, $configs);
@@ -45,7 +45,7 @@ class AustralSocialNetworkExtension extends Extension
    *
    * @throws Exception
    */
-  protected function loadConfigToAustralBundle(ContainerBuilder $container, YamlFileLoader $loader)
+  protected function loadConfigToAustralBundle(ContainerBuilder $container, YamlFileLoader $loader): void
   {
     $bundlesConfigPath = $container->getParameter("kernel.project_dir")."/config/bundles.php";
     if(file_exists($bundlesConfigPath))
