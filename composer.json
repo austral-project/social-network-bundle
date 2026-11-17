@@ -1,34 +1,44 @@
 {
-  "name":                                     "austral/social-network-bundle",
-  "type":                                     "symfony-bundle",
-  "description":                              "Social newtork for Austral",
-  "keywords":                                 ["Austral", "Social Network", "Symfony"],
-  "license":                                  "MIT",
-  "homepage":                                 "https://austral.dev",
-  "authors": [
-    {
-      "name":                                 "Matthieu Beurel",
-      "email":                                "matthieu@austral.dev",
-      "role":                                 "Developer"
-    }
-  ],
-  "require": {
-    "php":                                    "^8.0 || ^8.1 || ^8.2",
-
-    "austral/tools-bundle":                   "^3.1",
-    "austral/entity-bundle":                  "^3.1",
-    "austral/entity-file-bundle":             "^3.1",
-    "austral/http-bundle":                    "^3.1",
-    "austral/graphic-items-bundle":           "^3.1",
-    "symfony/config":                         "^5.4 || ^6.4"
-  },
-  "config": {
-    "sort-packages":                          true
-  },
-  "require-dev": {
-  },
-  "autoload": {
-    "psr-4": { "Austral\\SocialNetworkBundle\\": "" }
-  },
-  "minimum-stability":                        "dev"
+    "name": "austral/social-network-bundle",
+    "type": "symfony-bundle",
+    "description": "Social newtork for Austral",
+    "keywords": [
+        "Austral",
+        "Social Network",
+        "Symfony"
+    ],
+    "license": "MIT",
+    "homepage": "https://austral.dev",
+    "authors": [
+        {
+            "name": "Matthieu Beurel",
+            "email": "matthieu@austral.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.2 <9.0",
+        "austral/contracts": "^4.0",
+        "austral/tools-bundle": "^4.0",
+        "austral/entity-bundle": "^4.0",
+        "austral/entity-file-bundle": "^4.0",
+        "austral/http-bundle": "^4.0",
+        "austral/graphic-items-bundle": "^4.0",
+        "symfony/config": "^7.4"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-symfony": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Austral\\SocialNetworkBundle\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

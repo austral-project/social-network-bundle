@@ -12,10 +12,10 @@ namespace Austral\SocialNetworkBundle\Entity;
 use Austral\SocialNetworkBundle\Entity\Interfaces\SocialNetworkTranslateInterface;
 
 use Austral\EntityBundle\Entity\Entity;
-use Austral\EntityBundle\Entity\EntityInterface;
+use Austral\Contracts\Entity\EntityInterface;
 use Austral\EntityBundle\Entity\Traits\EntityTimestampableTrait;
-use Austral\EntityBundle\Entity\Interfaces\TranslateMasterInterface;
-use Austral\EntityBundle\Entity\Interfaces\TranslateChildInterface;
+use Austral\Contracts\Translate\TranslateMasterInterface;
+use Austral\Contracts\Translate\TranslateChildInterface;
 use Austral\EntityTranslateBundle\Entity\Traits\EntityTranslateChildTrait;
 
 use Doctrine\ORM\Mapping as ORM;

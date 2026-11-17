@@ -11,7 +11,7 @@
 namespace Austral\SocialNetworkBundle\EntityManager;
 
 use Austral\SocialNetworkBundle\Entity\Interfaces\SocialNetworkInterface;
-use Austral\EntityBundle\Entity\Interfaces\TranslateMasterInterface;
+use Austral\Contracts\Translate\TranslateMasterInterface;
 use Austral\SocialNetworkBundle\Repository\SocialNetworkRepository;
 
 use Austral\EntityBundle\EntityManager\EntityManager;
